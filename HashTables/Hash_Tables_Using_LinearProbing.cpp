@@ -123,6 +123,7 @@ int main(){
 			}
 			
 			if (flag) push (value);
+			else printf ("\n\nHash Table is Full\n");
 			
 		}
 		
@@ -145,5 +146,4 @@ int main(){
 	system ("cls");
 	
 	return 0;
-  
 }
