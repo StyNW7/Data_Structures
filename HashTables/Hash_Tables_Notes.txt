@@ -1,0 +1,16 @@
+HASH TABLE NOTES
+
+Concept: Hash Table in this topic is a hash map which is there is an index that be the key of a table or map that can be used to access the data in the hash table
+
+Mapping the key in hash table called "Hashing"
+
+There are many ways to mapping the key in the hash table:
+- Mid Square: If we got an index or a key we can square it and then take the middle key.
+- Division: This is the most common hashing concept in the hash table which is to divide the key using the modulus operator
+- Folding Methods: Partition the key into several parts and then sums up the parts together and then divide the sum using modulus operator
+- Digit Extraction: We just take a predefined digit of the given number 
+- Rotating Hash: Use any method mention above and then just rotate the key
+
+Collision:
+Collision is a term, when the hash table size is full or there is a key that want to be store in the hash table, but there is already exist the same key before it
+
