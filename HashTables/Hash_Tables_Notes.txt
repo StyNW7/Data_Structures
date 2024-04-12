@@ -17,9 +17,13 @@ Collision is a term, when the hash table size is full or there is a key that wan
 The top most collision handling known in hash table are:
 
 - Linear Probing
---> When there is a key that want to be store in the hash table, but there is already exist the same key before it, then we will iterate through all the index of the hash table size that is still empty. When the index is empty then we store the key there, but if we come back to the first key, then the hash table slot is full.
+--> When there is a key that want to be store in the hash table, but there is already exist the same key before it, then we will iterate through all the index of
+the hash table size that is still empty.
+When the index is empty then we store the key there, but if we come back to the first key, then the hash table slot is full.
 
 - Chaining
---> Chaining is the collision handling that if there is a key that want to be store in the hash table, but there is already exist the same key before it, then that  key will make a Linked List, so the key still store in the same index, but in can be somewhere at the linked list with an index of the key.
+--> Chaining is the collision handling that if there is a key that want to be store in the hash table, but there is already exist the same key before it,
+then that  key will make a Linked List, so the key still store in the same index,
+but in can be somewhere at the linked list with an index of the key.
 
 I think that's all basic concept of hash table, thankss :)
