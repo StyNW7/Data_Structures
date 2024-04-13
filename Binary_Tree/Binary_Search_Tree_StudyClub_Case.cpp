@@ -13,17 +13,21 @@ struct Node {
 
 void search (struct Node* curr, int find){
 	
-	if (curr == NULL) {
+	// Base Case
+	
+	if (curr == NULL){
 		printf ("%d is not found\n", find);
 		return;
 	}
 	
-	if (find == curr->key) {
-		printf ("%d is found\n", find);
+	if (curr->key == find) {
+		printf ("%d is found!\n", find);
 		return;
 	}
 	
-	if (find < curr->key) return search (curr->left, find);
+	// Recursive
+	
+	if (curr->key > find) return search (curr->left, find);
 	
 	return search (curr->right, find);
 	
@@ -97,66 +101,71 @@ void postOrderTraversal (struct Node* curr){
 
 void executeDeleteNode2 (struct Node* parent, struct Node* curr){
 	
-	// Case 1: Node to be deleted has no children (is a leaf node)
+	// Case 1: No child
+    
+    if (curr->left == NULL && curr->right == NULL){
+    	
+    	if (parent->left == curr){
+    		parent->left = NULL;
+		}
+		
+		else {
+			parent->right = NULL;
+		}
+		
+		free (curr);
+    	
+	}
 	
-    if (curr->left == NULL && curr->right == NULL) {
-    	
-        if (parent->left == curr) {
-            parent->left = NULL;
-        } 
+	// Case 2: Curr has 1 child
+	
+	else if (curr->left == NULL || curr->right == NULL){
+		
+//		struct Node* child = (curr->left == NULL) ? curr->right : curr->left;
+		
+		struct Node* child;
+		
+		if (curr->left == NULL){
+			child = curr->right;
+		}
+		
+		else child = curr->left;
+		
+		if (parent->left == curr){
+    		parent->left = child;
+		}
 		
 		else {
-            parent->right = NULL;
-        }
-        
-        free(curr);
-    }
-    
-    // Case 2: Node to be deleted has one child
-    
-    else if (curr->left == NULL || curr->right == NULL) {
-    	
-        struct Node* child = (curr->left != NULL) ? curr->left : curr->right;
-        
-        if (parent->left == curr) {
-            parent->left = child;
-        } 
+			parent->right = child;
+		}
 		
-		else {
-            parent->right = child;
-        }
-        
-        free(curr);
-    }
-    
-    // Case 3: Node to be deleted has two children
-    
-    else {
-    	
-        struct Node* successorParent = curr;
-        struct Node* successor = curr->right;
-
-        // Find the leftmost child of the right subtree
-        while (successor->left != NULL) {
-            successorParent = successor;
-            successor = successor->left;
-        }
-
-        // Copy the successor's value to the current node
-        curr->key = successor->key;
-
-        // Delete the successor node (which is guaranteed to have 0 or 1 child)
-        if (successorParent->left == successor) {
-            successorParent->left = (successor->right != NULL) ? successor->right : NULL;
-        } 
+		free (curr);
 		
-		else {
-            successorParent->right = (successor->right != NULL) ? successor->right : NULL;
-        }
-        
-        free(successor);
-        
-    }
+	}
+	
+	// Case 3: Curr has 2 children
+	
+	else {
+		
+		struct Node* predecessorParent = curr;
+		struct Node* predecessor = curr->right;
+		
+		while (predecessor->left != NULL){
+			predecessorParent = predecessor;
+			predecessor = predecessor->left;
+		}
+		
+		curr->key = predecessor->key;
+		
+		if (predecessorParent->left == predecessor){
+			predecessorParent->left = (predecessor->right != NULL) ? predecessor->right : NULL;
+		}
+		
+		else predecessorParent->right = (predecessor->right != NULL) ? predecessor->right : NULL;
+		
+		free (predecessor);
+		
+	}
 	
 }
 
@@ -164,62 +173,72 @@ void executeDeleteNode2 (struct Node* parent, struct Node* curr){
 
 void executeDeleteNode(struct Node* parent, struct Node* curr) {
 	
-    // Case 1: Node to be deleted has no children (is a leaf node)
+    // Case 1: No child
     
-    if (curr->left == NULL && curr->right == NULL) {
-        if (parent->left == curr) {
-            parent->left = NULL;
-        } 
-		
-		else {
-            parent->right = NULL;
-        }
-        free(curr);
-    }
-    
-    // Case 2: Node to be deleted has one child
-    
-    else if (curr->left == NULL || curr->right == NULL) {
-        struct Node* child = (curr->left != NULL) ? curr->left : curr->right;
-        if (parent->left == curr) {
-            parent->left = child;
-        } 
-		
-		else {
-            parent->right = child;
-        }
-        free(curr);
-    }
-    
-    // Case 3: Node to be deleted has two children
-    
-    else {
+    if (curr->left == NULL && curr->right == NULL){
     	
-        // Find the predecessor node (largest node in the left subtree)
-        
-        struct Node* predecessorParent = curr;
-        struct Node* predecessor = curr->left;
-
-        while (predecessor->right != NULL) {
-            predecessorParent = predecessor;
-            predecessor = predecessor->right;
-        }
-
-        // Copy the predecessor's value to the current node
-        curr->key = predecessor->key;
-
-        // Delete the predecessor node (which is guaranteed to have 0 or 1 child)
-        if (predecessorParent->left == predecessor) {
-            predecessorParent->left = (predecessor->left != NULL) ? predecessor->left : NULL;
-        } 
+    	if (parent->left == curr){
+    		parent->left = NULL;
+		}
 		
 		else {
-            predecessorParent->right = (predecessor->left != NULL) ? predecessor->left : NULL;
-        }
-
-        free(predecessor);
-        
-    }
+			parent->right = NULL;
+		}
+		
+		free (curr);
+    	
+	}
+	
+	// Case 2: Curr has 1 child
+	
+	else if (curr->left == NULL || curr->right == NULL){
+		
+//		struct Node* child = (curr->left == NULL) ? curr->right : curr->left;
+		
+		struct Node* child;
+		
+		if (curr->left == NULL){
+			child = curr->right;
+		}
+		
+		else child = curr->left;
+		
+		if (parent->left == curr){
+    		parent->left = child;
+		}
+		
+		else {
+			parent->right = child;
+		}
+		
+		free (curr);
+		
+	}
+	
+	// Case 3: Curr has 2 children
+	
+	else {
+		
+		struct Node* predecessorParent = curr;
+		struct Node* predecessor = curr->left;
+		
+		while (predecessor->right != NULL){
+			predecessorParent = predecessor;
+			predecessor = predecessor->right;
+		}
+		
+		curr->key = predecessor->key;
+		
+		if (predecessorParent->left == predecessor){
+			predecessorParent->left = (predecessor->left != NULL) ? predecessor->left : NULL;
+		}
+		
+		else predecessorParent->right = (predecessor->left != NULL) ? predecessor->left : NULL;
+		
+		free (predecessor);
+		
+	}
+    
 }
 
 
@@ -251,8 +270,6 @@ void deleteNode (struct Node* curr, int find){
 
 int minValue (struct Node* node){
 	
-	// Base Case
-	
 	if (node == NULL) return NULL;
 	if (node->left == NULL) return node->key;
 	
@@ -262,8 +279,6 @@ int minValue (struct Node* node){
 
 
 int maxValue (struct Node* node){
-	
-	// Base Case
 	
 	if (node == NULL) return NULL;
 	if (node->right == NULL) return node->key;
@@ -275,7 +290,7 @@ int maxValue (struct Node* node){
 
 int count (struct Node* node){
 	
-	if (!node) return 0;
+	if (!node) return NULL;
 	
 	return (1 + count(node->left) + count (node->right));
 	
@@ -284,14 +299,12 @@ int count (struct Node* node){
 
 int height (struct Node* node){
 	
-	if (node == NULL) {
-        return 0;
-    }
-
-    int leftHeight = height(node->left);
-    int rightHeight = height(node->right);
-
-    return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);
+	if (!node) return NULL;
+	
+	int leftHeight = height(node->left);
+	int rightHeight = height(node->right);
+	
+	return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);
 	
 }
 
