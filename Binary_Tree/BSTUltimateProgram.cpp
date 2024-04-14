@@ -31,6 +31,7 @@ struct Node* insert (struct Node* curr, int value){
 	// Base Case
 	
 	if (curr == NULL){
+		treeSize++;
 		curr = createNewNode(value);
 	}
 	
@@ -43,8 +44,6 @@ struct Node* insert (struct Node* curr, int value){
 		else curr->right = insert (curr->right, value);
 		
 	}
-	
-	treeSize++;
 	
 	return curr;
 	
@@ -337,7 +336,7 @@ int main(){
 		puts ("---------------------------\n");
 		
 		printf ("Current Tree (Infix Order):\n");
-		if (treeSize <= 0) printf ("There is no node yet...");
+		if (count(root) == 0) printf ("There is no node yet...");
 		else printInfix(root);
 		
 		puts ("\n");
