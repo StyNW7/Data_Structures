@@ -2,7 +2,7 @@
 
 🧑‍💻 Provides many example program of Data Structures using C / C++ Language
 
-🆓 Free to download, free to fork, you can do anything, and this repository is also unlicensed.
+🆓 Free to download, free to fork, you can do whatever you like, but giving credit to this repo would be greatly appreciated
 
 🏫 I made it for educational purpose, so that many people can learn DSA effectively.
 
