@@ -367,17 +367,17 @@ int main(){
 	
 	puts ("");
 	
-	deleteNode (root, 16);
-	deleteNode (root, 27);
-	deleteNode (root, 36);
-	deleteNode (root, 63);
-	deleteNode(root, 72);
-	
-	
-	printf ("\Inorder (after del 81): ");
-	inOrderTraversal (root); puts ("");
-	
-	puts ("");
+//	deleteNode (root, 16);
+//	deleteNode (root, 27);
+//	deleteNode (root, 36);
+//	deleteNode (root, 63);
+//	deleteNode(root, 72);
+//	
+//	
+//	printf ("\Inorder (after del 81): ");
+//	inOrderTraversal (root); puts ("");
+//	
+//	puts ("");
 	
 	printf ("Min Value: %d\n", minValue(root));
 	printf ("Max Value: %d\n", maxValue(root));
