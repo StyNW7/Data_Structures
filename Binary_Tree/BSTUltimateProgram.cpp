@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -83,6 +82,7 @@ void printPostfix (struct Node* curr){
 	
 }
 
+// The same as findMax Function, but different in the return type
 
 struct Node* findPredecessor (Node* curr){
 	
@@ -95,6 +95,7 @@ struct Node* findPredecessor (Node* curr){
 	
 }
 
+// The same as findMin Function, but different in the return type
 
 struct Node* findSuccessor (Node* curr){
 	
@@ -170,19 +171,16 @@ struct Node* pop (Node *curr, int value){
 		
 		// 2 Children using Successor
 		
-		else if (curr->left && curr->right) {
-			
-			// Search Successor
-			
-			Node* temp = findSuccessor (curr->right);
-			curr->value = temp->value;
-			curr->right = pop (curr->right, temp->value);
-			
-		}
+//		else if (curr->left && curr->right) {
+//			
+//			Node* temp = findSuccessor (curr->right);
+//			curr->value = temp->value;
+//			curr->right = pop (curr->right, temp->value);
+//			
+//		}
 		
 	}
 	
-	treeSize--;
 	return curr;
 	
 }
@@ -202,7 +200,7 @@ void search (struct Node* curr, int value){
 	
 	if (curr->value > value) return search (curr->left, value);
 	
-	return search  (curr->right, value);
+	return search (curr->right, value);
 	
 }
 
@@ -244,6 +242,12 @@ int maxHeight(struct Node* curr){
 	
 	int leftHeight = maxHeight (curr->left);
 	int rightHeight = maxHeight (curr->right);
+	
+//	int temp;
+//	if (leftHeight > rightHeight) temp = leftHeight;
+//	else temp = rightHeight;
+//	
+//	return (1 + temp);
 	
 	return (1 + (leftHeight > rightHeight ? leftHeight : rightHeight));
 	
