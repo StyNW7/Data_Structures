@@ -15,21 +15,23 @@ void search (struct Node* curr, int find){
 	
 	// Base Case
 	
-	if (curr == NULL){
-		printf ("%d is not found\n", find);
+	if (curr == NULL) {
+		printf ("%d is not found!\n", find);
 		return;
 	}
 	
-	if (curr->key == find) {
+	if (curr->key == find){
 		printf ("%d is found!\n", find);
 		return;
 	}
 	
-	// Recursive
+	// Recursive Case
 	
-	if (curr->key > find) return search (curr->left, find);
+	if (find > curr->key){
+		return search (curr->right, find);
+	}
 	
-	return search (curr->right, find);
+	else return search (curr->left, find);
 	
 }
 
@@ -79,7 +81,6 @@ void preOrderTraversal (struct Node* curr){
 	if (curr == NULL) return;
 	
 	printf ("%d ", curr->key);
-	
 	preOrderTraversal (curr->left);
 	preOrderTraversal (curr->right);
 	
@@ -92,7 +93,6 @@ void postOrderTraversal (struct Node* curr){
 	
 	postOrderTraversal (curr->left);
 	postOrderTraversal (curr->right);
-	
 	printf ("%d ", curr->key);
 	
 }
@@ -100,7 +100,7 @@ void postOrderTraversal (struct Node* curr){
 // Delete using successor
 
 void executeDeleteNode2 (struct Node* parent, struct Node* curr){
-
+	
 	// Parent == curr and no child (last node)
 
 	if (parent == curr && curr->left == NULL && curr->right == NULL){
@@ -123,7 +123,7 @@ void executeDeleteNode2 (struct Node* parent, struct Node* curr){
 		
 	}
 	
-	// Case 1: No child
+	// Case 1: has no child
     
     else if (curr->left == NULL && curr->right == NULL){
     	
@@ -131,61 +131,52 @@ void executeDeleteNode2 (struct Node* parent, struct Node* curr){
     		parent->left = NULL;
 		}
 		
-		else {
-			parent->right = NULL;
-		}
+		else parent->right = NULL;
 		
 		free (curr);
+		curr = NULL;
     	
 	}
 	
-	// Case 2: Curr has 1 child
+	// Case 2: Has 1 child
 	
 	else if (curr->left == NULL || curr->right == NULL){
 		
-//		struct Node* child = (curr->left == NULL) ? curr->right : curr->left;
-		
-		struct Node* child;
-		
-		if (curr->left == NULL){
-			child = curr->right;
-		}
-		
-		else child = curr->left;
+		struct Node* child = (curr->left == NULL) ? curr->right : curr->left;
 		
 		if (parent->left == curr){
     		parent->left = child;
 		}
 		
-		else {
-			parent->right = child;
-		}
+		else parent->right = child;
 		
 		free (curr);
+		curr = NULL;
 		
 	}
 	
-	// Case 3: Curr has 2 children
+	// Case 3: Has 2 children
 	
 	else {
 		
-		struct Node* predecessorParent = curr;
-		struct Node* predecessor = curr->right;
+		struct Node* successorParent = curr;
+		struct Node* successor = curr->right;
 		
-		while (predecessor->left != NULL){
-			predecessorParent = predecessor;
-			predecessor = predecessor->left;
+		while (successor->left != NULL){
+			successorParent = successor;
+			successor = successor->left;
 		}
 		
-		curr->key = predecessor->key;
+		curr->key = successor->key;
 		
-		if (predecessorParent->left == predecessor){
-			predecessorParent->left = (predecessor->right != NULL) ? predecessor->right : NULL;
+		if (successorParent->left == successor){
+			successorParent->left = (successor->left == NULL) ? successor->right : successor->left;
 		}
 		
-		else predecessorParent->right = (predecessor->right != NULL) ? predecessor->right : NULL;
+		else successorParent->right = (successor->left == NULL) ? successor->right : successor->left;
 		
-		free (predecessor);
+		free (successor);
+		successor = NULL;
 		
 	}
 	
@@ -195,6 +186,8 @@ void executeDeleteNode2 (struct Node* parent, struct Node* curr){
 
 void executeDeleteNode(struct Node* parent, struct Node* curr) {
 	
+	// Parent == curr and no child (last node)
+
 	if (parent == curr && curr->left == NULL && curr->right == NULL){
 		
 		free (curr);
@@ -202,6 +195,8 @@ void executeDeleteNode(struct Node* parent, struct Node* curr) {
 		return;
 		
 	}
+
+	// Parent == curr and still has one child
 	
 	else if (parent == curr && (curr->left == NULL || curr->right == NULL)){
 		
@@ -212,8 +207,8 @@ void executeDeleteNode(struct Node* parent, struct Node* curr) {
 		return;
 		
 	}
-	
-    // Case 1: No child
+    
+    // Case 1: has no child
     
     else if (curr->left == NULL && curr->right == NULL){
     	
@@ -221,43 +216,31 @@ void executeDeleteNode(struct Node* parent, struct Node* curr) {
     		parent->left = NULL;
 		}
 		
-		else {
-			parent->right = NULL;
-		}
+		else parent->right = NULL;
 		
 		free (curr);
-    	curr = NULL;
+		curr = NULL;
     	
 	}
 	
-	// Case 2: Curr has 1 child
+	// Case 2: Has 1 child
 	
 	else if (curr->left == NULL || curr->right == NULL){
 		
-//		struct Node* child = (curr->left == NULL) ? curr->right : curr->left;
-		
-		struct Node* child;
-		
-		if (curr->left == NULL){
-			child = curr->right;
-		}
-		
-		else child = curr->left;
+		struct Node* child = (curr->left == NULL) ? curr->right : curr->left;
 		
 		if (parent->left == curr){
     		parent->left = child;
 		}
 		
-		else {
-			parent->right = child;
-		}
+		else parent->right = child;
 		
 		free (curr);
 		curr = NULL;
 		
 	}
 	
-	// Case 3: Curr has 2 children
+	// Case 3: Has 2 children
 	
 	else {
 		
@@ -272,15 +255,16 @@ void executeDeleteNode(struct Node* parent, struct Node* curr) {
 		curr->key = predecessor->key;
 		
 		if (predecessorParent->left == predecessor){
-			predecessorParent->left = (predecessor->left != NULL) ? predecessor->left : NULL;
+			predecessorParent->left = (predecessor->left == NULL) ? predecessor->right : predecessor->left;
 		}
 		
-		else predecessorParent->right = (predecessor->left != NULL) ? predecessor->left : NULL;
+		else predecessorParent->right = (predecessor->left == NULL) ? predecessor->right : predecessor->left;
 		
 		free (predecessor);
 		predecessor = NULL;
 		
 	}
+    
     
 }
 
@@ -314,9 +298,10 @@ void deleteNode (struct Node* curr, int find){
 int minValue (struct Node* node){
 	
 	if (node == NULL) return NULL;
+	
 	if (node->left == NULL) return node->key;
 	
-	return minValue (node->left);
+	return minValue(node->left);
 	
 }
 
@@ -324,6 +309,7 @@ int minValue (struct Node* node){
 int maxValue (struct Node* node){
 	
 	if (node == NULL) return NULL;
+	
 	if (node->right == NULL) return node->key;
 	
 	return maxValue (node->right);
@@ -333,19 +319,19 @@ int maxValue (struct Node* node){
 
 int count (struct Node* node){
 	
-	if (!node) return NULL;
+	if (node == NULL) return 0;
 	
-	return (1 + count(node->left) + count (node->right));
+	return (1 + count(node->left) + count(node->right));
 	
 }
 
 
 int height (struct Node* node){
 	
-	if (!node) return NULL;
+	if (node == NULL) return 0;
 	
 	int leftHeight = height(node->left);
-	int rightHeight = height(node->right);
+	int rightHeight = height (node->right);
 	
 	return 1 + (leftHeight > rightHeight ? leftHeight : rightHeight);
 	
@@ -388,18 +374,6 @@ int main(){
 	printf ("\Inorder (after del 81): "); inOrderTraversal (root); puts ("");
 	
 	puts ("");
-	
-//	deleteNode (root, 16);
-//	deleteNode (root, 27);
-//	deleteNode (root, 36);
-//	deleteNode (root, 63);
-//	deleteNode(root, 72);
-//	
-//	
-//	printf ("\Inorder (after del 81): ");
-//	inOrderTraversal (root); puts ("");
-//	
-//	puts ("");
 	
 	printf ("Min Value: %d\n", minValue(root));
 	printf ("Max Value: %d\n", maxValue(root));
