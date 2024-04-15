@@ -100,10 +100,32 @@ void postOrderTraversal (struct Node* curr){
 // Delete using successor
 
 void executeDeleteNode2 (struct Node* parent, struct Node* curr){
+
+	// Parent == curr and no child (last node)
+
+	if (parent == curr && curr->left == NULL && curr->right == NULL){
+		
+		free (curr);
+		root = NULL;
+		return;
+		
+	}
+
+	// Parent == curr and still has one child
+	
+	else if (parent == curr && (curr->left == NULL || curr->right == NULL)){
+		
+		struct Node* child = (curr->left == NULL) ? curr->right : curr->left;
+		root = child;
+		free (curr);
+		curr = NULL;
+		return;
+		
+	}
 	
 	// Case 1: No child
     
-    if (curr->left == NULL && curr->right == NULL){
+    else if (curr->left == NULL && curr->right == NULL){
     	
     	if (parent->left == curr){
     		parent->left = NULL;
