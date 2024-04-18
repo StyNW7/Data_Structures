@@ -2,8 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-int treeSize = 0;
-
 struct Node {
 	
 	int value;
@@ -31,7 +29,6 @@ struct Node* insert (struct Node* curr, int value){
 	// Base Case
 	
 	if (curr == NULL){
-		treeSize++;
 		curr = createNewNode(value);
 	}
 	
@@ -82,6 +79,7 @@ void printPostfix (struct Node* curr){
 	
 }
 
+
 // The same as findMax Function, but different in the return type
 
 struct Node* findPredecessor (Node* curr){
@@ -129,7 +127,6 @@ struct Node* pop (Node *curr, int value){
 		// No Child
 		
 		if (curr->left == NULL && curr->right == NULL){
-			treeSize--;
 			free (curr);
 			return NULL;
 		}
@@ -152,7 +149,6 @@ struct Node* pop (Node *curr, int value){
 			
 			free (curr);
 			
-			treeSize--;
 			return temp;
 			
 		}
@@ -169,15 +165,60 @@ struct Node* pop (Node *curr, int value){
 			
 		}
 		
-		// 2 Children using Successor
+	}
+	
+	return curr;
+	
+}
+
+
+struct Node* pop2 (struct Node* curr, int value){
+	
+	// Base Case
+	
+	if (curr == NULL){
+		return NULL;
+	}
+	
+	else if (curr->value > value){
+		curr->left = pop2 (curr->left, value);
+	}
+	
+	else if (curr->value < value){
+		curr->right = pop2 (curr->right, value);
+	}
+	
+	// Recursive
+	
+	else {
 		
-//		else if (curr->left && curr->right) {
-//			
-//			Node* temp = findSuccessor (curr->right);
-//			curr->value = temp->value;
-//			curr->right = pop (curr->right, temp->value);
-//			
-//		}
+		// NO child
+		
+		if (curr->right == NULL && curr->left == NULL){
+			free (curr);
+			return NULL;
+		}
+		
+		// 1 child
+		
+		else if (curr->right == NULL || curr->left == NULL){
+			
+			struct Node* child = (curr->right == NULL) ? curr->left : curr->right;
+			
+			free (curr);
+			return child;
+			
+		}
+		
+		// 2 child using successor
+		
+		else {
+			
+			struct Node* temp = findSuccessor(curr->right);
+			curr->value = temp->value;
+			curr->right = pop2(curr->right, temp->value);
+			
+		}
 		
 	}
 	
@@ -296,6 +337,29 @@ void viewTree(Node* root) {
 }
 
 
+void printCurrentLevel(struct Node* curr, int level){
+	
+	if (!curr) return;
+	if (level == 1) printf ("%d ", curr->value);
+	else if (level > 1){
+		printCurrentLevel(curr->left, level - 1);
+        printCurrentLevel(curr->right, level - 1);
+	}
+	
+}
+
+
+void printBFS (struct Node* curr){
+	
+	int h = maxHeight(curr);
+	
+	for (int i = 1; i <= h; i++){
+		printCurrentLevel (curr, i);
+	}
+	
+}
+
+
 void printDetails (){
 	
 	system ("cls");
@@ -314,6 +378,11 @@ void printDetails (){
 	
 	printf ("Postfix Order\n");
 	printPostfix(root);
+	
+	puts("\n");
+	
+	printf ("Print Breadth-First-Search (BFS):\n");
+	printBFS(root);
 	
 	puts("\n");
 	
@@ -399,7 +468,7 @@ int main(){
 			system ("cls");
 			
 			printf ("Current Tree:\n");
-			if (treeSize == 0) printf ("There is no node yet...");
+			if (count(root) == 0) printf ("There is no node yet...");
 			else printInfix(root);
 			
 			puts("\n");
