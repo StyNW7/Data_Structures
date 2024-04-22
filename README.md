@@ -5,9 +5,9 @@ This GitHub repository contains a collection of example programs showcasing vari
 
 ## Table of Contents
 <ul>
-  <li> <a href="https://github.com/StyNW7/Data_Structures/blob/main/README.md#key-features"> Key Features </a> </li>
-  <li> <a href="https://github.com/StyNW7/Data_Structures/blob/main/README.md#contents"> Contents </a> </li>
-  <li> <a href="https://github.com/StyNW7/Data_Structures/blob/main/README.md#contributing"> Contributing </a> </li>
+  <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#key-features"> Key Features </a> </li>
+  <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#contents"> Contents </a> </li>
+  <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#contributing"> Contributing </a> </li>
 </ul>
 
 ### Key Features:
