@@ -18,9 +18,9 @@ This GitHub repository contains a collection of example programs showcasing vari
 </details>
 
 ### Key Features:
-- Diverse Data Structures: Explore implementations of essential data structures such as arrays, linked lists, stacks, queues, trees (binary search trees, AVL trees, etc.), graphs, and more.
+- Diverse Data Structures: Explore implementations of essential data structures such as arrays, linked lists, stacks, queues, trees (binary search trees, AVL trees, etc.), and more.
 
-- C/C++ Language: Programs are written in C or C++, providing clear and concise implementations that highlight core concepts.- - 
+- C/C++ Language: Programs are written in C or C++, providing clear and concise implementations that highlight core concepts.
 
 - Educational Examples: Each program includes detailed comments and explanations to aid understanding of data structure operations - and algorithms.
 
