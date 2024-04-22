@@ -3,12 +3,19 @@
 ## Repository Overview
 This GitHub repository contains a collection of example programs showcasing various data structures implemented in C/C++. The programs serve as educational resources and practical demonstrations of fundamental data structures commonly used in computer science and software development.
 
-## Table of Contents
-<ul>
-  <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#key-features"> Key Features </a> </li>
-  <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#contents"> Contents </a> </li>
-  <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#contributing"> Contributing </a> </li>
-</ul>
+<details>
+  
+  <summary>
+    <h3> Table of Contents </h3>
+  </summary>
+  
+  <ul>
+    <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#key-features"> Key Features </a> </li>
+    <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#contents"> Contents </a> </li>
+    <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#contributing"> Contributing </a> </li>
+  </ul>
+  
+</details>
 
 ### Key Features:
 - Diverse Data Structures: Explore implementations of essential data structures such as arrays, linked lists, stacks, queues, trees (binary search trees, AVL trees, etc.), graphs, and more.
