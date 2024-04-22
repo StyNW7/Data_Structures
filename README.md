@@ -1,4 +1,4 @@
-# Data_Structures
+![1644826783284-3  Data Structures](https://github.com/StyNW7/Data_Structures/assets/76080599/fc261021-8f0c-4e0a-93b5-c615161f0453)
 
 ## Repository Overview
 This GitHub repository contains a collection of example programs showcasing various data structures implemented in C/C++. The programs serve as educational resources and practical demonstrations of fundamental data structures commonly used in computer science and software development.
