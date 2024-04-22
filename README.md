@@ -4,9 +4,11 @@
 This GitHub repository contains a collection of example programs showcasing various data structures implemented in C/C++. The programs serve as educational resources and practical demonstrations of fundamental data structures commonly used in computer science and software development.
 
 ## Table of Contents
-<a href=""> Key Features </a>
-- Contents
-- Contributing
+<ul>
+  <li> <a href="https://github.com/StyNW7/Data_Structures/blob/main/README.md#key-features"> Key Features </a> </li>
+  <li> <a href="https://github.com/StyNW7/Data_Structures/blob/main/README.md#contents"> Contents </a> </li>
+  <li> <a href="https://github.com/StyNW7/Data_Structures/blob/main/README.md#contributing"> Contributing </a> </li>
+</ul>
 
 ### Key Features:
 - Diverse Data Structures: Explore implementations of essential data structures such as arrays, linked lists, stacks, queues, trees (binary search trees, AVL trees, etc.), graphs, and more.
