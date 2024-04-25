@@ -3,6 +3,16 @@
 # Data Structures Programs for Everyone
 This GitHub repository contains a collection of example programs showcasing various data structures implemented in C/C++. The programs serve as educational resources and practical demonstrations of fundamental data structures commonly used in computer science and software development.
 
+- 🆓 Free to download, free to fork, you can do whatever you like, but giving credit to this repo would be greatly appreciated
+
+- 🏫 I made it for educational purpose, so that many people can learn DSA effectively.
+
+- ✨ You can appreciate it by star this repository or just fork instead of download the Repository :)
+
+- 🔥 Thank you for coming to this repository, hope you learn something new
+
+- 📥 Let me know if there is any recommendation, suggestion, or update to upgrade this Repository!
+
 <details>
   
   <summary>
@@ -12,8 +22,8 @@ This GitHub repository contains a collection of example programs showcasing vari
   <ul>
     <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#key-features"> Key Features </a> </li>
     <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#contents"> Contents </a> </li>
-    <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#contributing"> Contributing </a> </li>
     <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#data-structures"> Data Structures </a> </li>
+    <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#contributing"> Contributing </a> </li>
     <li> <a href="https://github.com/StyNW7/Data_Structures/tree/main?tab=readme-ov-file#license"> License </a> </li>
   </ul>
   
@@ -36,16 +46,38 @@ This GitHub repository contains a collection of example programs showcasing vari
 
 - Explore this repository to learn, practice, and gain insights into data structures using C/C++. Feel free to contribute by suggesting improvements, reporting issues, or adding new examples.
 
+## Data Structures
+
+1. Array
+    - Explanation (Slides)
+    - Simple Program
+    - Example Real Application Program
+2. Linked List
+    - Explanation (Slides)
+    - Example Real Application Program
+3. Hash Table
+    - Explanation (Slides)
+    - Example Real Application Program
+5. Stack and Queue using Linked List Concept
+    - Explanation (Slides)
+    - Example Real Application Program
+7. Tries
+    - Explanation (Slides)
+    - Example Real Application Program
+9. Binary Search Tree
+    - Explanation (Slides)
+    - Example Real Application Program
+11. AVL Tree
+    - Explanation (Slides)
+    - Example Real Application Program
+13. Red and Black Tree
+    - Explanation (Slides)
+    - Example Real Application Program
+
 ## Contributing
-- 🆓 Free to download, free to fork, you can do whatever you like, but giving credit to this repo would be greatly appreciated
+This repository is contribution friendly ✨. If you'd like to add another algorithm or data structures, your contribution is welcome^♾️! 😀
 
-- 🏫 I made it for educational purpose, so that many people can learn DSA effectively.
-
-- ✨ You can appreciate it by star this repository or just fork instead of download the Repository :)
-
-- 🔥 Thank you for coming to this repository, hope you learn something new
-
-- 📥 Let me know if there is any recommendation, suggestion, or update to upgrade this Repository!
+Make this repository useful and insightful for other people that wants to learn about Data Structures efficiently 🔥
 
 ## License
 This repository is released under the MIT license. In short, this means you are free to use this software in any personal, open-source or commercial projects. Attribution is optional but appreciated.
