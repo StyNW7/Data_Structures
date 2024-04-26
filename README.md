@@ -61,7 +61,9 @@ This GitHub repository contains a collection of example programs showcasing vari
     - <a href="https://github.com/StyNW7/Data_Structures/blob/main/LinkedList/redVSblueCardGame.cpp"> Other Application of DLL </a>
 3. Hash Table
     - Explanation (Slides)
-    - Example Real Application Program
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/HashTables/Hash_Tables_Notes.txt"> Simple Notes (.txt) </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/HashTables/Hash_Tables_Using_Chaining.cpp"> Collision Handling - Chaining </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/HashTables/Hash_Tables_Using_LinearProbing.cpp"> Collision Handling - Linear Probing </a>
 5. Stack and Queue using Linked List Concept
     - Explanation (Slides)
     - Example Real Application Program
