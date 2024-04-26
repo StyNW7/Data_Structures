@@ -50,7 +50,9 @@ This GitHub repository contains a collection of example programs showcasing vari
 
 1. Array
     - Explanation (Slides)
-    - Simple Program
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/Array/Simple_Pointer_Program.cpp"> Basic of Pointer </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/Array/SimpleMenuUsingBasicArray.cpp"> Simple Array </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/Array/SimpleArrayUsingStruct.cpp"> Array of Structure </a>
     - Example Real Application Program
 2. <a href="https://github.com/StyNW7/Data_Structures/tree/main/LinkedList"> Linked List </a>
     - Explanation (Slides)
@@ -66,7 +68,14 @@ This GitHub repository contains a collection of example programs showcasing vari
     - <a href="https://github.com/StyNW7/Data_Structures/blob/main/HashTables/Hash_Tables_Using_LinearProbing.cpp"> Collision Handling - Linear Probing </a>
 5. Stack and Queue using Linked List Concept
     - Explanation (Slides)
-    - Example Real Application Program
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/StackAndQueue/QueueMenu.cpp"> Basic Queue Concept (1) </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/StackAndQueue/Shurima_Project_Manager.cpp"> Basic Queue Concept (2) </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/StackAndQueue/FairWaitingList1.cpp"> Example of Queue Merging (1) </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/StackAndQueue/FairWaitingList2.cpp"> Example of Queue Merging (2) </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/StackAndQueue/TaskManagement.cpp"> Simple Task Management </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/StackAndQueue/Priority_Queue_Study_Club2.cpp"> Task Management sorted by Priority </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/StackAndQueue/Priority_Queue_Study_Club1.cpp"> Hospital using Queue Concept </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/StackAndQueue/Queue_Ultimate_Program.cpp"> Queue Ultimate Program - Double Linked List </a>
 7. Tries
     - Explanation (Slides)
     - Example Real Application Program
