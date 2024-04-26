@@ -52,9 +52,13 @@ This GitHub repository contains a collection of example programs showcasing vari
     - Explanation (Slides)
     - Simple Program
     - Example Real Application Program
-2. Linked List
+2. <a href="https://github.com/StyNW7/Data_Structures/tree/main/LinkedList"> Linked List </a>
     - Explanation (Slides)
-    - Example Real Application Program
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/LinkedList/SingleLinkedList.cpp"> Basic Single Linked List </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/LinkedList/MultiLevelLinkedList.cpp"> Multi Level Linked List </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/LinkedList/DoubleLinkedListTemplate.cpp"> Double Linked List Template </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/LinkedList/DoubleLinkedListMenu.cpp"> Double Linked List Menu Program </a>
+    - <a href="https://github.com/StyNW7/Data_Structures/blob/main/LinkedList/redVSblueCardGame.cpp"> Other Application of DLL </a>
 3. Hash Table
     - Explanation (Slides)
     - Example Real Application Program
